@@ -19,7 +19,7 @@ public class ThirdActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_third);
 
-        TextView textView = findViewById(R.id.tv_content);
+        TextView textView = findViewById(R.id.tv_third);
         textView.setText("third activty");
     }
 }

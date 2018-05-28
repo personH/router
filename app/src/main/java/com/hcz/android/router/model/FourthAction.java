@@ -8,12 +8,12 @@ import android.os.Parcelable;
  */
 
 public class FourthAction implements Parcelable{
-    public int mCode;
-    public String mAction;
+    public int actCode;
+    public String action;
 
     protected FourthAction(Parcel in) {
-        mCode = in.readInt();
-        mAction = in.readString();
+        actCode = in.readInt();
+        action = in.readString();
     }
 
     public static final Creator<FourthAction> CREATOR = new Creator<FourthAction>() {
@@ -35,7 +35,7 @@ public class FourthAction implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(mCode);
-        dest.writeString(mAction);
+        dest.writeInt(actCode);
+        dest.writeString(action);
     }
 }

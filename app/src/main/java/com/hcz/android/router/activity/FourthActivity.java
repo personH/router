@@ -15,9 +15,8 @@ import com.hcz.android.router.model.FourthAction;
  * Created by shawn on 2018/5/27.
  */
 
-public class FourthActivity extends AppCompatActivity {
+public class FourthActivity extends BaseActivity {
 
-    Gson gson=new Gson();
     private FourthAction mAction;
 
     @Override
@@ -26,16 +25,13 @@ public class FourthActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_fourth);
 
-        TextView textView = findViewById(R.id.tv_content);
+        TextView textView = findViewById(R.id.tv_fourth);
         textView.setText("fourth activty");
 
-        Intent intent = getIntent();
 
-        if (intent != null && intent.hasExtra(CommonConstant.INTENT_PARAMS)) {
+        mAction = getParamObject(FourthAction.class);
 
-            mAction= gson.fromJson(intent.getStringExtra(CommonConstant.INTENT_PARAMS), FourthAction.class);
-
-        }
+        textView.setText(mAction.actCode + mAction.action);
     }
 
 
